@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Real-Time Coding Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is an interactive web application that allows users to work on coding exercises in real-time, with role-based interactions for mentors and students. It provides a platform where mentors can guide students through code blocks, and students can submit their code solutions to receive feedback instantly. The application is built using Flask for the backend and React for the frontend.
 
-## Available Scripts
+## :clipboard: Table of Contents
+  * [Features](#dart-features)
+  * [Tech Stack](#hammer_and_wrench-tech-stack)
+  * [Installation](#gear-installation)
+  * [Usage](#computer-usage)
+  * [File Structure](#open_file_folder-file-structure)
 
-In the project directory, you can run:
+## :dart: Features
 
-### `npm start`
+- **Real-Time Collaboration**: Mentors and students can join specific code blocks and interact in real time.
+- **Role-Based System**: Mentors and students are assigned roles upon joining a code block, with mentors guiding students through the exercises.
+- **Code Validation**: Students can submit their code, which is checked against a predefined solution. If the solution is correct, they receive a smiley notification.
+- **Dynamic Code Block Management**: Code blocks are displayed on the frontend dynamically, and users can select which block to work on.
+- **Socket Communication**: SocketIO is used for real-time communication between the frontend and backend.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## :hammer_and_wrench: Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Backend**: Flask, Flask-SocketIO, Flask-CORS
+- **Frontend**: React, Socket.IO Client, CodeMirror
+- **Styling**: Styled Components
 
-### `npm test`
+## :gear: Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+Make sure you have the following installed:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Python 3.x
+- Node.js (for React development)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Backend Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
+   ```bash
+   git clone <repo_url>
+   cd <repo_directory>
+   ```
 
-### `npm run eject`
+2. Run the Flask server:
+   ```bash
+   python app.py
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Frontend Setup
+- Navigate to the frontend directory:
+  ```bash
+  cd frontend
+  ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Install the required Node.js packages:
+  ```bash
+  npm install
+  ```
+  
+- Run the React development server:
+  ```bash
+  npm start
+  ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## :computer: Usage
+- Open the frontend application in your browser. It will automatically connect to the backend via WebSockets.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- From the lobby, select a code block you wish to work on. You will be assigned a role (mentor or student).
 
-## Learn More
+- If you're a student, you can edit the code block using the integrated code editor. Submit your solution to check it against the predefined correct solution.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- If you're a mentor, you can observe students' progress and guide them if needed.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## :open_file_folder: File Structure
+```bash
+/app.py                - The Flask backend application.
+/frontend/             - The React frontend application.
+/frontend/src/         - React component files, including `Lobby.js`, `CodeBlock.js`, etc.
+```
