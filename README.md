@@ -5,6 +5,7 @@ This project is an interactive web application that allows users to work on codi
 ## :clipboard: Table of Contents
   * [Features](#dart-features)
   * [Tech Stack](#hammer_and_wrench-tech-stack)
+  * [User Interface Preview](#iphone-user-interface-preview)
   * [Installation](#gear-installation)
   * [Usage](#computer-usage)
   * [File Structure](#open_file_folder-file-structure)
@@ -19,9 +20,31 @@ This project is an interactive web application that allows users to work on codi
 
 ## :hammer_and_wrench: Tech Stack
 
-- **Backend**: Flask, Flask-SocketIO, Flask-CORS
-- **Frontend**: React, Socket.IO Client, CodeMirror
-- **Styling**: Styled Components
+- **Backend**: Flask, Flask-SocketIO, Flask-CORS.
+- **Frontend**: React, Socket.IO Client, CodeMirror.
+- **Styling**: Styled Components.
+
+The application integrates Flask with Socket.IO to enable real-time code collaboration, while React powers the interactive front end. CodeMirror provides a rich coding experience, and Styled Components ensures a modern, maintainable UI.
+
+## :iphone: User Interface Preview
+
+Below are previews of different sections of the application, showcasing key features and functionalities.
+
+![](docs/lobby_screen.png)
+
+**Fig. 1** | Lobby page for session management and code block selection. This serves as the entry point for both mentors and students.
+
+---
+
+![](docs/mentor_mode_screen.png)
+
+**Fig. 2** | Mentor mode with real-time code review and guidance.
+
+---
+
+![](docs/student_mode_screen.png)
+
+**Fig. 3** | Student mode for collaborative coding and feedback.
 
 ## :gear: Installation
 
@@ -72,7 +95,13 @@ Make sure you have the following installed:
 
 ## :open_file_folder: File Structure
 ```bash
-/app.py                - The Flask backend application.
-/frontend/             - The React frontend application.
-/frontend/src/         - React component files, including `Lobby.js`, `CodeBlock.js`, etc.
+/codeing-web-app/      
+│── /backend/           - Flask backend application.  
+│   ├── app.py          - Main Flask server file.  
+│  
+│── /frontend/          - React frontend application.  
+│   ├── /src/           - React component files.  
+│   │   ├── Lobby.js  
+│   │   ├── CodeBlock.js  
+│   │   └── ...
 ```
